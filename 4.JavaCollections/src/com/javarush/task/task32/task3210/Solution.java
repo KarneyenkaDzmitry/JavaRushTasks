@@ -20,7 +20,6 @@ public class Solution {
                 byte[] buff = new byte[(int) textLength];
                 raf.read(buff, 0, (int) textLength);
                 raf.seek(fileLength);
-                System.out.println(buff.toString()+" - "+new String(buff));
                 String text = (new String(buff)).equals(args[2])? "true":"false";
                 raf.write(text.getBytes());
                 raf.close();
