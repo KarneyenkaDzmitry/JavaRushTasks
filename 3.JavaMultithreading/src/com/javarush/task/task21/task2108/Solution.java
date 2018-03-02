@@ -1,7 +1,5 @@
 package com.javarush.task.task21.task2108;
 
-import java.util.Collections;
-
 /*
 Клонирование растений
 */
@@ -22,7 +20,7 @@ public class Solution {
         System.out.println(clone.branches);
     }
 
-    public static class Plant{
+    public static class Plant {
         private String name;
 
         public Plant(String name) {
@@ -41,7 +39,8 @@ public class Solution {
             super(name);
             this.branches = branches;
         }
-        public Tree clone()throws CloneNotSupportedException{
+
+        public Tree clone() throws CloneNotSupportedException {
 
             return new Tree(super.name, branches.clone());
         }

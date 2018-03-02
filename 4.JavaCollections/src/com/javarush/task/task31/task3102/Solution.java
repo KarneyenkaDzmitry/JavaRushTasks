@@ -2,7 +2,6 @@ package com.javarush.task.task31.task3102;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.*;
 
 /* 
@@ -13,10 +12,10 @@ public class Solution {
         List<String> listResults = new ArrayList<String>();
         Queue<String> queue = new ArrayDeque<>();
         queue.add(root);
-        while(true) {
+        while (true) {
             try {
                 String nameFile = queue.poll();
-                if (nameFile!=null) {
+                if (nameFile != null) {
                     File files = new File(nameFile);
                     for (File name : files.listFiles()) {
                         if (name.isDirectory()) {
@@ -25,14 +24,14 @@ public class Solution {
                             listResults.add(name.getAbsolutePath());
                         }
                     }
-                }else{break;}
-
+                } else {
+                    break;
+                }
             } catch (NoSuchElementException e) {
                 break;
             }
         }
         return listResults;
-
     }
 
     public static void main(String[] args) {

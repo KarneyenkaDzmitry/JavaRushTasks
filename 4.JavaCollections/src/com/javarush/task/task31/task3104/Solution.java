@@ -1,6 +1,5 @@
 package com.javarush.task.task31.task3104;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -14,7 +13,7 @@ import java.util.List;
 public class Solution extends SimpleFileVisitor<Path> {
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        if (file.toString().endsWith(".rar")||file.toString().endsWith(".zip")){
+        if (file.toString().endsWith(".rar") || file.toString().endsWith(".zip")) {
             archived.add(file.toString());
         }
         return super.visitFile(file, attrs);
